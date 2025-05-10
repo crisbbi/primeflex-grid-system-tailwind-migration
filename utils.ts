@@ -18,11 +18,14 @@ export const classMap: Record<string, string> = {
 } as const;
 
 export const replaceClasses = (input: string) => {
-    const regex = new RegExp(`\\b(${Object.keys(classMap).join("|")})\\b`, "g");
-    return input.replace(regex, match => {
-        if (match.startsWith("grid-")) {
-            return classMap["grid-nogutter"];
+    const regex = new RegExp(`\\b(sm:|md:|lg:|xl:)?(${Object.keys(classMap).join("|")})\\b`, "g");
+    return input.replace(regex, (_, prefix, className) => {
+        if (!prefix) {
+            return classMap[className];
         }
-        return classMap[match];
+        const replacement = classMap[className];
+        const words = replacement.split(" ");
+        const prefixedWords = words.map(word => `${prefix}${word}`);
+        return prefixedWords.join(" ");
     });
 };
