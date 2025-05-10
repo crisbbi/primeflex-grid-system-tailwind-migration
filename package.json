@@ -18,6 +18,8 @@
   "author": "Christian Biasi",
   "license": "MIT",
   "dependencies": {
+    "@types/glob": "^8.1.0",
+    "glob": "^11.0.2",
     "vite": "^6.3.5"
   },
   "devDependencies": {
