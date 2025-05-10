@@ -1,4 +1,4 @@
-export const classMap = {
+export const classMap: Record<string, string> = {
     "grid-nogutter": "mx-0 mt-0",
     grid: "flex flex-wrap -mx-2 -mt-2",
     "col-fixed": "grow-0 shrink-0 p-2",
