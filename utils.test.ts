@@ -11,5 +11,5 @@ describe("The CSS class migration to test", () => {
 })
 
 function convertPf2Tw(textInput: string) {
-  return textInput.replace(/grid/g, 'flex flex-wrap -mx-2 -mt-2');
+  return textInput.replace(/grid/g, 'flex flex-wrap -mx-2 -mt-2')
 }
