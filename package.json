@@ -1,0 +1,30 @@
+{
+  "name": "css-grid-primeng-18-migration",
+  "version": "1.0.0",
+  "description": "A package to migrate Primeflex CSS classes related to grid to Tailwind CSS flexbox utilities.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "vitest",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "Primeflex",
+    "migration",
+    "CSS",
+    "Tailwind",
+    "grid",
+    "flexbox"
+  ],
+  "author": "Christian Biasi",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^6.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.5.3",
+    "vitest": "^3.1.3"
+  }
+}
