@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
 import * as readline from "node:readline";
 import { glob } from "glob";
