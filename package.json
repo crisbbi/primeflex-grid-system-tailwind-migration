@@ -4,6 +4,9 @@
   "description": "A package to migrate Primeflex CSS classes related to the 'grid system' to Tailwind CSS flexbox utilities.",
   "main": "index.ts",
   "type": "module",
+  "bin": {
+    "migrate": "dist/index.js"
+  },
   "scripts": {
     "test": "vitest",
     "prepare": "husky",
