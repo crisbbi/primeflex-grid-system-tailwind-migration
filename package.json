@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A package to migrate Primeflex CSS classes related to grid to Tailwind CSS flexbox utilities.",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "test": "vitest",
     "prepare": "husky"
