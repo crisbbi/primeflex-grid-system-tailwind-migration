@@ -17,6 +17,10 @@ describe("The CSS class migration to test", () => {
         { cssString: "col col-1", expectedReplacement: "grow basis-0 p-2 grow-0 shrink-0 p-2 w-1/12" },
         { cssString: "sm:col-1", expectedReplacement: "sm:grow-0 sm:shrink-0 sm:p-2 sm:w-1/12" },
         {
+            cssString: "sm:col-1 md:col-offset-1",
+            expectedReplacement: "sm:grow-0 sm:shrink-0 sm:p-2 sm:w-1/12 md:ml-[8.33%]",
+        },
+        {
             cssString: "sm:col-1 md:col-6",
             expectedReplacement: "sm:grow-0 sm:shrink-0 sm:p-2 sm:w-1/12 md:grow-0 md:shrink-0 md:p-2 md:w-6/12",
         },
