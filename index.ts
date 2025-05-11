@@ -14,9 +14,12 @@ prompt.question(`Enter the file path to traverse (e.g., ./src), current path is 
         const componentFiles = await glob(`${filePath}/**/*.component.html`);
 
         for (const file of componentFiles) {
-            let fileContent = readFileSync(file, "utf-8");
-            fileContent = replaceClasses(fileContent);
-            writeFileSync(file, fileContent, "utf-8");
+            const oldFileContent = readFileSync(file, "utf-8");
+            const newFileContent = replaceClasses(oldFileContent);
+            if (oldFileContent !== newFileContent) {
+                console.log("File changed:", file);
+            }
+            writeFileSync(file, newFileContent, "utf-8");
         }
         console.log("Files processed and saved successfully.");
     } catch (error) {
