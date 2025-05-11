@@ -1,7 +1,7 @@
 {
-  "name": "css-grid-primeng-18-migration",
+  "name": "css-grid-pf2tw",
   "version": "1.0.0",
-  "description": "A package to migrate Primeflex CSS classes related to grid to Tailwind CSS flexbox utilities.",
+  "description": "A package to migrate Primeflex CSS classes related to the 'grid system' to Tailwind CSS flexbox utilities.",
   "main": "index.ts",
   "type": "module",
   "scripts": {
