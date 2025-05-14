@@ -1,6 +1,6 @@
 .husky
 .lintstagedrc
-.prettierrc.json
+.prettierrc
 *.ts
 node_modules
 .gitignore
