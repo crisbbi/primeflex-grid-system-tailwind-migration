@@ -31,14 +31,23 @@ export const classMap: Record<string, string> = {
 } as const;
 
 export const replaceClasses = (input: string) => {
-    const regex = new RegExp(`\\b(sm:|md:|lg:|xl:)?(${Object.keys(classMap).join("|")})\\b`, "g");
-    return input.replace(regex, (_, prefix, className) => {
-        if (!prefix) {
-            return classMap[className];
-        }
-        const replacement = classMap[className];
-        const words = replacement.split(" ");
-        const prefixedWords = words.map(word => `${prefix}${word}`);
-        return prefixedWords.join(" ");
+    const regex = /(class=")([^"]*)"/g;
+    return input.replace(regex, (_: string, classProperty: string, cssClasses: string) => {
+        const classesArray = cssClasses.split(/\s+/).filter(Boolean);
+        const replacedClasses: string[] = [];
+        classesArray.forEach(classNameWithPrefix => {
+            const [prefix, className] = classNameWithPrefix.includes(":")
+                ? classNameWithPrefix.split(":")
+                : [null, classNameWithPrefix];
+
+            if (className in classMap) {
+                const replacement = classMap[className];
+                const replacedWords = replacement.split(" ").map(word => (prefix ? `${prefix}:${word}` : word));
+                replacedClasses.push(...replacedWords);
+            } else {
+                replacedClasses.push(classNameWithPrefix);
+            }
+        });
+        return `${classProperty}${replacedClasses.join(" ")}"`;
     });
 };
