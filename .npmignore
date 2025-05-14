@@ -1,0 +1,7 @@
+.husky
+.lintstagedrc
+.prettierrc.json
+*.ts
+node_modules
+.gitignore
+extensions.json
