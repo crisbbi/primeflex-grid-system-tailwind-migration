@@ -58,6 +58,10 @@ describe("The CSS class migration to test", () => {
             cssString: `<section class="sm:col-fixed md:col-12">`,
             expectedReplacement: `<section class="sm:grow-0 sm:shrink-0 sm:p-2 md:grow-0 md:shrink-0 md:p-2 md:w-full">`,
         },
+        {
+            cssString: `<div class="col-offset-2 bg-purple-100 rounded-md p-2">`,
+            expectedReplacement: `<div class="ml-[16.67%] bg-purple-100 rounded-md p-2">`,
+        },
     ];
     cssStringTestCases.forEach(({ cssString, expectedReplacement }) => {
         it(`should replace "${cssString}" with "${expectedReplacement}"`, () => {
