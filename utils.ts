@@ -28,6 +28,10 @@ export const classMap: Record<string, string> = {
     "col-11": "grow-0 shrink-0 p-2 w-11/12",
     "col-12": "grow-0 shrink-0 p-2 w-full",
     "col": "grow basis-0 p-2",
+    "field": "mb-4",
+    "formgroup-inline": "flex flex-wrap items-start",
+    "field-checkbox": "mb-4 flex items-center",
+    "field-radiobutton": "mb-4 flex items-center",
 } as const;
 
 export const replaceClasses = (input: string) => {

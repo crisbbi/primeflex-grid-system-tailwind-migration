@@ -62,6 +62,22 @@ describe("The CSS class migration to test", () => {
             cssString: `<div class="col-offset-2 bg-purple-100 rounded-md p-2">`,
             expectedReplacement: `<div class="ml-[16.67%] bg-purple-100 rounded-md p-2">`,
         },
+        {
+            cssString: `<div class="col-offset-2 field bg-purple-100 rounded-md p-2">`,
+            expectedReplacement: `<div class="ml-[16.67%] mb-4 bg-purple-100 rounded-md p-2">`,
+        },
+        {
+            cssString: `<div class="col-offset-2 formgroup-inline bg-purple-100 rounded-md p-2">`,
+            expectedReplacement: `<div class="ml-[16.67%] flex flex-wrap items-start bg-purple-100 rounded-md p-2">`,
+        },
+        {
+            cssString: `<div class="col-offset-2 field-checkbox bg-purple-100 rounded-md p-2">`,
+            expectedReplacement: `<div class="ml-[16.67%] mb-4 flex items-center bg-purple-100 rounded-md p-2">`,
+        },
+        {
+            cssString: `<div class="col-offset-2 field-radiobutton bg-purple-100 rounded-md p-2">`,
+            expectedReplacement: `<div class="ml-[16.67%] mb-4 flex items-center bg-purple-100 rounded-md p-2">`,
+        },
     ];
     cssStringTestCases.forEach(({ cssString, expectedReplacement }) => {
         it(`should replace "${cssString}" with "${expectedReplacement}"`, () => {
